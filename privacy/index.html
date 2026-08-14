@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Политика конфиденциальности — В точку CV</title>
+<meta name="description" content="Как бот «В точку CV» обращается с данными: что хранит, зачем, сколько и как это удалить.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1a19;
+    --muted: #6b625d;
+    --line: #e6ded9;
+    --paper: #fbf9f7;
+    --rust: #d8703f;
+    --rust-deep: #b85a2e;
+    --tint: #f5c4b3;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 17px/1.65 Onest, system-ui, sans-serif;
+  }
+  .wrap { max-width: 660px; margin: 0 auto; padding: 0 24px 96px; }
+
+  header { padding: 56px 0 40px; }
+  .mark { display: flex; align-items: center; gap: 14px; }
+  .mark svg { flex: none; }
+  .mark b { font-size: 19px; font-weight: 700; letter-spacing: -.01em; }
+  .mark span { color: var(--muted); font-size: 15px; display: block; font-weight: 400; }
+
+  h1 {
+    font-size: clamp(30px, 6vw, 42px);
+    line-height: 1.12;
+    letter-spacing: -.02em;
+    margin: 36px 0 12px;
+  }
+  .lede { color: var(--muted); font-size: 18px; margin: 0; }
+  .stamp {
+    font: 500 13px/1 "JetBrains Mono", ui-monospace, monospace;
+    color: var(--muted);
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    letter-spacing: .02em;
+  }
+
+  section { padding-top: 40px; }
+  h2 {
+    font-size: 20px;
+    letter-spacing: -.01em;
+    margin: 0 0 12px;
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+  }
+  h2::before {
+    content: counter(sec, decimal-leading-zero);
+    counter-increment: sec;
+    font: 500 13px/1 "JetBrains Mono", ui-monospace, monospace;
+    color: var(--rust);
+    flex: none;
+  }
+  body { counter-reset: sec; }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 0; list-style: none; }
+  li { position: relative; padding-left: 20px; margin-bottom: 8px; }
+  li::before {
+    content: "";
+    position: absolute;
+    left: 2px; top: .68em;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--tint);
+  }
+  a { color: var(--rust-deep); text-underline-offset: 3px; }
+  a:hover { color: var(--rust); }
+  code {
+    font: 500 15px/1 "JetBrains Mono", ui-monospace, monospace;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 2px 6px;
+  }
+  .fill { background: var(--tint); padding: 1px 6px; border-radius: 4px; }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 14px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 15px;
+  }
+  a:focus-visible, :focus-visible {
+    outline: 2px solid var(--rust);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="mark">
+    <svg width="30" height="48" viewBox="0 0 56 96" aria-hidden="true">
+      <circle cx="28" cy="15" r="13" fill="none" stroke="#d8703f" stroke-width="4"/>
+      <circle cx="28" cy="15" r="4.5" fill="none" stroke="#d8703f" stroke-width="3"/>
+      <line x1="28" y1="28" x2="28" y2="92" stroke="#d8703f" stroke-width="4" stroke-linecap="round"/>
+      <g stroke="#b85a2e" stroke-width="4" stroke-linecap="round">
+        <line x1="30" y1="64" x2="52" y2="64"/>
+        <line x1="30" y1="76" x2="44" y2="76"/>
+        <line x1="30" y1="88" x2="56" y2="88"/>
+      </g>
+    </svg>
+    <div>
+      <b>В точку CV</b>
+      <span>продающее резюме под вакансию · парсинг по ссылке</span>
+    </div>
+  </div>
+
+  <h1>Политика конфиденциальности</h1>
+  <p class="lede">Что бот хранит, зачем, как долго и как это стереть. Без юридического тумана — своими словами, но это официальный документ.</p>
+  <p class="stamp">Редакция от 14.08.2026</p>
+</header>
+
+<section>
+  <h2>Кто обрабатывает данные</h2>
+  <div class="card">
+    <p>Оператор персональных данных — <span class="fill">[ФИО]</span>, ИНН <span class="fill">[ИНН]</span>, плательщик налога на профессиональный доход.</p>
+    <p>Связаться: <a href="mailto:spasionovartemiy@mail.ru">spasionovartemiy@mail.ru</a> или команда <code>/support</code> в боте.</p>
+  </div>
+  <p>Политика распространяется на телеграм-бота «В точку CV» и всё, что происходит внутри него.</p>
+</section>
+
+<section>
+  <h2>Что бот собирает</h2>
+  <p>Только то, что ты сам ему присылаешь:</p>
+  <ul>
+    <li>имя, город, контакты — телефон, почту, ссылки, если они есть в резюме;</li>
+    <li>сведения об опыте: компании, должности, даты, обязанности, достижения;</li>
+    <li>образование, курсы, навыки, языки;</li>
+    <li>фотографию, если ты её прислал или разрешил взять из резюме;</li>
+    <li>тексты вакансий, под которые собираются резюме;</li>
+    <li>идентификатор твоего аккаунта в Telegram и имя пользователя.</li>
+  </ul>
+  <p>Бот не запрашивает паспортные данные, СНИЛС, сведения о здоровье, взглядах и убеждениях. Присылать их не нужно.</p>
+</section>
+
+<section>
+  <h2>Зачем это нужно</h2>
+  <p>Одна цель: собрать для тебя резюме под конкретную вакансию и сопроводительное письмо. Данные не используются для рекламы, не продаются и не передаются работодателям, кадровым агентствам или кому-либо ещё.</p>
+</section>
+
+<section>
+  <h2>На каком основании</h2>
+  <p>На основании твоего согласия. Ты даёшь его кнопкой «Принимаю» при первом запуске бота — до этого момента ничего не сохраняется. Отозвать согласие можно в любой момент командой <code>/reset</code>.</p>
+</section>
+
+<section>
+  <h2>Кому данные передаются</h2>
+  <p>Чтобы переписать твой опыт под язык вакансии, текст резюме и текст вакансии отправляются в сервис искусственного интеллекта <a href="https://openrouter.ai/privacy" rel="noopener">OpenRouter</a> — это трансграничная передача в США. В сервис уходит только текст: фотография остаётся на сервере бота.</p>
+  <p>Сама переписка идёт через Telegram и подчиняется <a href="https://telegram.org/privacy" rel="noopener">его политике</a>.</p>
+  <p>Серверы бота расположены за пределами России.</p>
+</section>
+
+<section>
+  <h2>Сколько хранится</h2>
+  <p>Профиль живёт, пока ты пользуешься ботом. Если полгода не заходишь — он удаляется автоматически вместе с историей генераций. Готовые PDF удаляются с сервера в течение недели.</p>
+</section>
+
+<section>
+  <h2>Как удалить всё прямо сейчас</h2>
+  <p>Команда <code>/reset</code> в боте стирает профиль, фотографию и историю генераций без возможности восстановления. Подтверждения по почте не требуется, ждать не нужно.</p>
+</section>
+
+<section>
+  <h2>Твои права</h2>
+  <ul>
+    <li>узнать, какие данные о тебе есть — команда <code>/profile</code> показывает всё;</li>
+    <li>исправить неточности — команда <code>/edit</code>, обычным текстом;</li>
+    <li>удалить данные и отозвать согласие — команда <code>/reset</code>;</li>
+    <li>обратиться с жалобой в Роскомнадзор, если считаешь, что права нарушены.</li>
+  </ul>
+  <p>Письменные обращения принимаются на почту оператора и рассматриваются в течение 30 дней.</p>
+</section>
+
+<section>
+  <h2>Как данные защищены</h2>
+  <p>Доступ к серверу закрыт паролем и есть только у оператора. Данные передаются по шифрованным каналам. Абсолютной защиты не существует ни у кого, поэтому не присылай боту то, что не готов доверить онлайн-сервису.</p>
+</section>
+
+<section>
+  <h2>Изменения</h2>
+  <p>Если политика поменяется, новая редакция появится на этой странице, а бот попросит согласие заново. Дата редакции указана вверху.</p>
+</section>
+
+<footer>
+  <p>В точку CV · <a href="https://t.me/spasenov_resume_bot">бот в Telegram</a></p>
+</footer>
+
+</div>
+</body>
+</html>
