@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Денис — Дата аналитик CVM</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><style>
+:root{--bg:#fbf8f8;--card:#fff;--ink:#0a0a0a;--soft:#1f1f1f;--muted:#6b6b6b;
+--faint:#a3a3a3;--line:#eae2e3;--accent:#6d2b3a;--tint:#f2e2e6}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:Onest,system-ui,-apple-system,sans-serif;background:var(--bg);
+color:var(--ink);font-size:16px;line-height:1.55;letter-spacing:-.011em;
+-webkit-font-smoothing:antialiased}
+.serif{font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-style:italic}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;letter-spacing:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--ink);color:var(--bg)}
+
+nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);
+backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;
+height:60px;gap:20px}
+.brand{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.navlinks{display:flex;gap:22px;font-size:13.5px;color:var(--muted);overflow-x:auto;
+scrollbar-width:none}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{white-space:nowrap;padding:4px 0;border-bottom:1px solid transparent}
+.navlinks a:hover{color:var(--accent);border-color:var(--accent)}
+
+.hero{padding:64px 0 52px}
+.hero-grid{display:grid;grid-template-columns:1fr 300px;gap:56px;align-items:start}
+.kicker{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+color:var(--muted);margin-bottom:22px}
+h1{font-size:clamp(42px,7.5vw,76px);line-height:.95;letter-spacing:-.04em;
+font-weight:600}
+h1 span{display:block}
+h1 span+span{color:var(--accent)}
+.rolelines{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+font-size:14.5px;color:var(--muted)}
+.rolelines b{color:var(--ink);font-weight:600;font-size:16px}
+.rolelines>*+*::before{content:"· ";color:var(--faint)}
+.tagline{margin-top:26px;font-size:19.5px;line-height:1.5;max-width:60ch;
+color:var(--soft)}
+.tagline b{font-weight:600;color:var(--ink)}
+.tagline i{font-style:italic;font-family:'Instrument Serif',Georgia,serif;
+font-size:1.08em;color:var(--accent)}
+.cta{display:flex;flex-wrap:wrap;gap:11px;margin-top:30px}
+.btn{font-size:14.5px;padding:12px 22px;border-radius:999px;border:1px solid var(--line);
+background:var(--card);color:var(--soft);display:inline-block;transition:.15s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.solid:hover{opacity:.88;color:#fff}
+
+.portrait{position:relative}
+.portrait img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:18px;
+border:1px solid var(--line)}
+.pcap{display:flex;justify-content:space-between;margin-top:12px;font-size:12px;
+color:var(--muted)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);
+display:inline-block;margin-right:7px;vertical-align:middle}
+
+.industries{margin-top:44px;padding-top:26px;border-top:1px solid var(--line)}
+.ilabel{font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+color:var(--faint);margin-bottom:14px}
+.irow{display:flex;flex-wrap:wrap;gap:9px}
+.ichip{font-size:13.5px;padding:8px 15px 8px 12px;border-radius:999px;
+background:var(--tint);color:var(--accent);white-space:nowrap;display:inline-flex;
+align-items:center;gap:8px}
+.ichip svg{width:15px;height:15px;flex:none;opacity:.85}
+.ichip u{text-decoration:none;color:var(--muted);margin-left:8px;font-size:12.5px}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:1px;background:var(--line);border-top:1px solid var(--line);
+border-bottom:1px solid var(--line)}
+.stat{background:var(--bg);padding:26px 4px}
+.stat b{display:block;font-size:34px;font-weight:600;letter-spacing:-.03em;
+line-height:1;color:var(--accent)}
+.stat b u{text-decoration:none;font-size:16px;margin-left:3px;color:var(--ink)}
+.stat span{display:block;margin-top:9px;font-size:13px;color:var(--muted);
+line-height:1.4;max-width:22ch}
+
+section{padding:56px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:none}
+.eyebrow{font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;
+color:var(--muted);margin-bottom:16px}
+.eyebrow em{font-style:normal;color:var(--accent);margin-right:10px}
+h2{font-size:clamp(27px,4.2vw,40px);line-height:1.08;letter-spacing:-.03em;
+font-weight:600;margin-bottom:30px;max-width:20ch}
+h2 span{color:var(--accent)}
+
+.two{display:grid;grid-template-columns:1fr 340px;gap:52px;align-items:start}
+.prose p{margin-bottom:15px;font-size:16.5px;line-height:1.6;color:var(--soft);
+max-width:62ch}
+.prose p:last-child{margin-bottom:0}
+.prose b{font-weight:600;color:var(--ink)}
+.facts{background:var(--card);border:1px solid var(--line);border-radius:16px;
+padding:8px 22px}
+.fact{display:flex;justify-content:space-between;gap:18px;padding:13px 0;
+border-bottom:1px solid var(--line);font-size:14.5px}
+.fact:last-child{border-bottom:none}
+.fact u{text-decoration:none;color:var(--muted);flex:none}
+.fact b{font-weight:500;text-align:right}
+
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+padding:26px 26px 24px}
+.card .num{font-size:12px;letter-spacing:.1em;color:var(--accent);
+margin-bottom:14px;font-family:'JetBrains Mono',monospace}
+.card h3{font-size:19px;font-weight:600;letter-spacing:-.02em;margin-bottom:9px;
+line-height:1.25}
+.card p{color:var(--muted);font-size:15px;line-height:1.55}
+
+.job{display:grid;grid-template-columns:190px 1fr;gap:32px;padding:30px 0;
+border-top:1px solid var(--line)}
+.job:first-of-type{border-top:none;padding-top:0}
+.jdate{font-size:13.5px;color:var(--muted);line-height:1.5}
+.jdate u{display:block;text-decoration:none;color:var(--faint);font-size:12.5px;
+margin-top:4px}
+.badge{display:inline-block;margin-top:9px;font-size:11px;letter-spacing:.08em;
+text-transform:uppercase;padding:4px 10px;border-radius:999px;
+background:var(--tint);color:var(--accent)}
+.job h3{font-size:23px;font-weight:600;letter-spacing:-.025em;line-height:1.2}
+.jrole{margin-top:5px;font-size:16px;color:var(--accent);font-weight:500}
+.jnote{margin-top:4px;font-size:14px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0 6px}
+.tag{font-size:12.5px;padding:5px 12px;border-radius:999px;background:var(--tint);
+color:var(--accent)}
+.job ul{list-style:none;margin-top:14px}
+.job li{position:relative;padding-left:19px;margin-bottom:9px;color:var(--soft);
+font-size:15.5px;line-height:1.5}
+.job li::before{content:"";position:absolute;left:0;top:.66em;width:5px;height:5px;
+border-radius:50%;background:var(--accent)}
+
+.edu{display:grid;grid-template-columns:90px 1fr;gap:24px;padding:18px 0;
+border-bottom:1px solid var(--line);align-items:baseline}
+.edu:last-child{border-bottom:none}
+.eyear{font-size:13px;color:var(--accent);font-family:'JetBrains Mono',monospace}
+.edu b{display:block;font-size:16.5px;font-weight:600;letter-spacing:-.015em}
+.edu span{display:block;margin-top:3px;color:var(--muted);font-size:14.5px}
+
+.skillcols{display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.scol h4{font-size:16px;font-weight:600;margin-bottom:6px;letter-spacing:-.015em}
+.sbar{height:3px;background:var(--line);border-radius:99px;overflow:hidden;
+margin-bottom:14px}
+.sbar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.sitem{display:flex;justify-content:space-between;gap:12px;padding:7px 0;
+border-bottom:1px solid var(--line);font-size:14.5px}
+.sitem:last-child{border-bottom:none}
+.sitem u{text-decoration:none;color:var(--faint);font-size:12px;flex:none;
+align-self:center}
+
+.contacts{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.contact{display:flex;justify-content:space-between;align-items:center;
+background:var(--card);border:1px solid var(--line);border-radius:14px;
+padding:20px 24px;font-size:16px;transition:.15s}
+.contact:hover{border-color:var(--accent)}
+.contact u{text-decoration:none;font-size:12px;letter-spacing:.1em;
+text-transform:uppercase;color:var(--faint)}
+
+footer{padding:34px 0 60px;border-top:1px solid var(--line);color:var(--muted);
+font-size:13.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer a{color:var(--accent)}
+
+@media(max-width:900px){
+ .hero-grid{grid-template-columns:1fr;gap:32px}
+ .portrait{max-width:220px}
+ .two{grid-template-columns:1fr;gap:28px}
+}
+@media(max-width:680px){
+ .wrap{padding:0 20px}
+ .hero{padding:36px 0 34px}
+ section{padding:38px 0}
+ .job{grid-template-columns:1fr;gap:10px;padding:24px 0}
+ .jdate u{display:inline;margin-left:10px}
+ .badge{margin-top:0;margin-left:10px}
+ .edu{grid-template-columns:1fr;gap:4px}
+ .stat{padding:20px 4px}
+ .stat b{font-size:27px}
+ .fact{flex-direction:column;gap:2px}
+ .fact b{text-align:left}
+}
+@media(prefers-reduced-motion:no-preference){
+ .hero,section{animation:up .5s ease both}
+ @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+@media print{
+ nav,.cta,footer{display:none}
+ body{background:#fff}
+ section,.job,.card{break-inside:avoid}
+}
+</style></head><body><nav><div class="wrap"><span class="brand">Денис</span><div class="navlinks"><a href="#about">профиль</a><a href="#fit">почему подхожу</a><a href="#experience">опыт</a><a href="#education">образование</a><a href="#skills">навыки</a></div></div></nav><div class="wrap"><div class="hero"><div class="hero-grid"><div><p class="kicker">Москва</p><h1><span>Денис</span></h1><p class="rolelines"><b>Дата аналитик CVM</b> <span>МТС</span></p><p class="tagline">Я развиваю продуктовые направления, управляя бэклогом аналитических задач и создавая отчетность для стейкхолдеров. Имею опыт работы с базами данных, SQL и Python для анализа клиентского поведения. Координирую кроссфункциональные команды и <b>собираю обратную связь от пользователей</b> для discovery инсайтов.</p><div class="cta"><a class="btn" href="#experience">Смотреть опыт →</a></div></div><div class="portrait"><img src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzAwIDQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2YyZTJlNiIvPjxjaXJjbGUgY3g9IjE1MCIgY3k9IjE1OCIgcj0iNTYiIGZpbGw9IiM2ZDJiM2EiIG9wYWNpdHk9Ii4yNiIvPjxwYXRoIGQ9Ik01MiAzNzJjMC01NCA0NC05OCA5OC05OHM5OCA0NCA5OCA5OCIgZmlsbD0iIzZkMmIzYSIgb3BhY2l0eT0iLjI2Ii8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTU4IiByPSI1NiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNmQyYjNhIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9Ii41Ii8+PC9zdmc+" alt=""><div class="pcap"><span><i class="dot"></i>Денис</span><span>Москва</span></div></div></div><div class="industries"><p class="ilabel">Клиенты и проекты</p><div class="irow"><span class="ichip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13.5V6l4.5-3v3.3L11 3v10.5M2 13.5h12M5 9.5h1M8.5 9.5h1"/></svg>Лукойл</span><span class="ichip"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13.5V6l4.5-3v3.3L11 3v10.5M2 13.5h12M5 9.5h1M8.5 9.5h1"/></svg>Росатом</span></div></div></div></div><div class="wrap"><div class="stats"><div class="stat"><b>4<u></u></b><span>места работы в резюме</span></div><div class="stat"><b>2<u></u></b><span>клиента и проекта</span></div><div class="stat"><b>65<u>%</u></b><span>совпадение с вакансией</span></div></div></div><div class="wrap"><section id="about"><p class="eyebrow"><em>01</em>Профиль</p><h2>Что за <span>специалист</span></h2><div class="two"><div class="prose"><p>Управлял бэклогом аналитических задач и создавал отчеты для стейкхолдеров в Вайлдберриз, согласовывая план развития системы на основе данных.</p><p>Использую SQL и Python для работы с базами данных, имею опыт системного анализа и тематической обработки данных из космической съемки.</p></div><div class="facts"><div class="fact"><u>Ищу роль</u><b>Дата аналитик CVM</b></div><div class="fact"><u>Локация</u><b>Москва</b></div><div class="fact"><u>Языки</u><b>Русский родной</b></div><div class="fact"><u>Инструменты</u><b>юзерстори мап · приоритизация задач · опросы</b></div></div></div></section><section id="fit"><p class="eyebrow"><em>02</em>Соответствие</p><h2>Почему подхожу <span>на эту роль</span></h2><div class="cards"><div class="card"><p class="num">01</p><h3>Аналитика и отчетность</h3><p>Управлял бэклогом аналитических задач и создавал отчеты для стейкхолдеров в Вайлдберриз, согласовывая план развития системы на основе данных.</p></div><div class="card"><p class="num">02</p><h3>Работа с данными</h3><p>Использую SQL и Python для работы с базами данных, имею опыт системного анализа и тематической обработки данных из космической съемки.</p></div><div class="card"><p class="num">03</p><h3>Понимание CVM-направлений</h3><p>Изучал поведение пользователей через сбор обратной связи и развивал геоинформационные порталы для крупных корпоративных клиентов.</p></div></div></section><section id="experience"><p class="eyebrow"><em>03</em>Карьера</p><h2>Опыт работы</h2><div class="job"><div class="jdate"></div><div><h3>Вайлдберриз</h3><p class="jrole">Владелец продукта по открытию новых пунктов выдачи заказа - map.wb.ru</p><div class="tags"><span class="tag">Управление задачами</span><span class="tag">SQL/Python</span><span class="tag">Аналитика данных</span><span class="tag">Работа с клиентами</span></div><ul><li>Управлял бэклогом аналитических задач для кроссфункциональной команды разработки, дизайна и аналитики</li><li>Создавал и согласовывал отчетность по развитию системы со стейкхолдерами</li><li>Проводил исследования пользовательского поведения через сбор обратной связи для discovery инсайтов</li></ul></div></div><div class="job"><div class="jdate"></div><div><h3>Морские информационные технологии</h3><p class="jrole"></p><ul><li>Развивал корпоративные геоинформационные порталы с аналитикой данных для крупных клиентов</li></ul></div></div><div class="job"><div class="jdate"></div><div><h3>Центр морских исследований МГУ</h3><p class="jrole">Специалист по геоинформационным системам</p><ul><li>Вел дистанционный экологический мониторинг с анализом данных северного морского пути</li></ul></div></div><div class="job"><div class="jdate"></div><div><h3>Роскосмос</h3><p class="jrole">Специалист тематической обработки космической съемки</p><ul><li>Занимался тематической обработкой космической съемки и подготовкой отчетов</li></ul></div></div></section><section id="education"><p class="eyebrow"><em>04</em>Образование</p><h2>Образование <span>и квалификация</span></h2><div class="edu"><span class="eyear"></span><div><b>РУДН</b><span>бакалавриат - экология и природопльзование</span></div></div><div class="edu"><span class="eyear"></span><div><b>РГУНГ</b><span>магистратура - экология и природопользование</span></div></div></section><section id="skills"><p class="eyebrow"><em>05</em>Компетенции</p><h2>Что умею</h2><div class="skillcols"><div class="scol"><h4>Продуктовый менеджмент</h4><div class="sbar"><i style="width:75%"></i></div><div class="sitem"><span>юзерстори мап</span></div><div class="sitem"><span>приоритизация задач</span></div><div class="sitem"><span>опросы</span></div></div><div class="scol"><h4>Разработка</h4><div class="sbar"><i style="width:60%"></i></div><div class="sitem"><span>гибкие подходы к разработке</span></div><div class="sitem"><span>канабн</span></div><div class="sitem"><span>эджайл</span></div></div><div class="scol"><h4>Технические навыки</h4><div class="sbar"><i style="width:85%"></i></div><div class="sitem"><span>работа с базами данных</span></div><div class="sitem"><span>системный анализ</span></div><div class="sitem"><span>sql</span></div><div class="sitem"><span>python</span></div></div><div class="scol"><h4>Языки</h4><div class="sbar"><i style="width:40%"></i></div><div class="sitem"><span>английский</span></div></div></div></section><footer><span>Резюме собрано ботом <a href="https://t.me/vtochku_cv_bot">Вточку CV</a></span><span class="mono">Москва</span></footer></div></body></html>
